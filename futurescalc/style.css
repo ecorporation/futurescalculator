@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 100vh;          /* Full viewport height */
+    background: #121212;    /* Background color */
+    color: white;           /* Text color (if needed) */
+    font-family: Arial, sans-serif;
+    background: url('https://img.freepik.com/free-vector/abstract-red-light-lines-pipe-speed-zoom-black-background-technology_1142-8971.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#symbolSelector {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#symbolSelector:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+#calculators {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+#results {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+#input, #riskCalculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#input:hover, #riskCalculator:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button, input[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF5733;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="button"]:hover {
+    background-color: #C70039;
+}
+
+#result, #riskResult {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#resultProfit, #resultLoss, #resultContracts {
+    text-align: center;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    min-width: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#resultProfit:hover, #resultLoss:hover, #resultContracts:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tradingview-widget-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tradingview-widget-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
