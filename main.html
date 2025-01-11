@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futures Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div id="symbolSelector">
+        <h2>Select Symbol</h2>
+        <select id="symbol">
+            <option value="mes">MES</option>
+            <option value="mnq">MNQ</option>
+        </select>
+    </div>
+
+    <div id="calculators">
+        <div id="input">
+            <h2>Profit &amp; Loss Calculator</h2>
+            <input id="ticksl" type="number" placeholder="Your SL (in ticks)">
+            <input id="ticktp" type="number" placeholder="Your TP (in ticks)">
+            <input id="contract" type="number" placeholder="Your Contract Size">
+            <input type="button" id="submit" value="Calculate Profit &amp; Loss">
+        </div>
+
+        <div id="riskCalculator">
+            <h2>Risk Calculator</h2>
+            <input id="accountSize" type="number" placeholder="Account Size ($)">
+            <input id="riskTolerance" type="number" placeholder="Risk Tolerance (%)">
+            <input id="riskTicksl" type="number" placeholder="Stop Loss (in ticks)">
+            <input type="button" id="calculateRisk" value="Calculate Contracts">
+        </div>
+
+        <!-- TradingView Widget -->
+        <div class="tradingview-widget-container" style="width: 300px; height: 350px;">
+            <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/events/?locale=en#%7B%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22width%22%3A300%2C%22height%22%3A350%2C%22importanceFilter%22%3A%221%2C0%2C1%22%2C%22countryFilter%22%3A%22us%22%2C%22utm_source%22%3A%22%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22events%22%2C%22page-uri%22%3A%22__NHTTP__%22%7D" title="events TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: calc(100% - 32px); width: 100%;"></iframe>
+            <div class="tradingview-widget-copyright">
+                <a href="https://www.tradingview.com/?utm_source=&amp;utm_medium=widget_new&amp;utm_campaign=events" rel="noopener nofollow" target="_blank">
+                    <span class="blue-text">Track all markets on TradingView</span>
+                </a>
+            </div>
+        <style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		/* @mixin sf-pro-display-font; */
+		font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
+
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:visited {
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
+
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
+
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+    </div>
+
+    <div id="results">
+        <div id="result">
+            <div id="resultProfit"></div>
+            <div id="resultLoss"></div>
+        </div>
+
+        <div id="riskResult">
+            <div id="resultContracts"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const script = document.createElement('script');
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-events.js";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+        colorTheme: "dark",
+        isTransparent: false,
+        width: 300,
+        height: 350,
+        locale: "en",
+        importanceFilter: "1,0,1",
+        countryFilter: "us",
+    });
+    document.querySelector('.tradingview-widget-container').appendChild(script);
+</script>
+<script src="script.js"></script>
+
+</body></html>
