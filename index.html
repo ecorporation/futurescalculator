@@ -32,19 +32,6 @@
             <input id="riskTicksl" type="number" placeholder="Stop Loss (in ticks)">
             <input type="button" id="calculateRisk" value="Calculate Contracts">
         </div>
-
-        <!-- TradingView Widget -->
-        <div class="tradingview-widget-container" style="width: 300px; height: 350px;">
-            <iframe scrolling="no" allowtransparency="true" frameborder="0" 
-                src="https://www.tradingview-widget.com/embed-widget/events/?locale=en#%7B%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22width%22%3A300%2C%22height%22%3A350%2C%22importanceFilter%22%3A%221%2C0%2C1%22%2C%22countryFilter%22%3A%22us%22%2C%22utm_source%22%3A%22%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22events%22%2C%22page-uri%22%3A%22__NHTTP__%22%7D" 
-                title="events TradingView widget" lang="en" 
-                style="user-select: none; box-sizing: border-box; display: block; height: calc(100% - 32px); width: 100%;"></iframe>
-            <div class="tradingview-widget-copyright">
-                <a href="https://www.tradingview.com/?utm_source=&amp;utm_medium=widget_new&amp;utm_campaign=events" rel="noopener nofollow" target="_blank">
-                    <span class="blue-text">Track all markets on TradingView</span>
-                </a>
-            </div>
-        </div>
     </div>
 
     <div id="results">
@@ -57,8 +44,33 @@
             <div id="resultContracts"></div>
         </div>
     </div>
+
+    <!-- TradingView Widget -->
+    <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+                <span class="blue-text">Track all markets on TradingView</span>
+            </a>
+        </div>
+    </div>
 </div>
 
 <script src="script.js"></script>
+
+<!-- Proper TradingView Widget Embed -->
+<script type="text/javascript">
+    new TradingView.widget({
+        "container_id": "tradingview-widget-container__widget",
+        "width": 400,
+        "height": 550,
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "locale": "en",
+        "importanceFilter": "-1,0,1",
+        "countryFilter": "us"
+    });
+</script>
+
 </body>
 </html>
