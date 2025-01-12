@@ -7,70 +7,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <div id="symbolSelector">
-        <h2>Select Symbol</h2>
-        <select id="symbol">
-            <option value="mes">MES</option>
-            <option value="mnq">MNQ</option>
-        </select>
+<div class="outer-container">
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
+        <div id="symbolSelector">
+            <h2>Select Symbol</h2>
+            <select id="symbol">
+                <option value="mes">MES</option>
+                <option value="mnq">MNQ</option>
+            </select>
+        </div>
+
+        <div id="calculators">
+            <div id="input">
+                <h2>Profit &amp; Loss Calculator</h2>
+                <input id="ticksl" type="number" placeholder="Your SL (in ticks)">
+                <input id="ticktp" type="number" placeholder="Your TP (in ticks)">
+                <input id="contract" type="number" placeholder="Your Contract Size">
+                <input type="button" id="submit" value="Calculate Profit &amp; Loss">
+            </div>
+
+            <div id="riskCalculator">
+                <h2>Risk Calculator</h2>
+                <input id="accountSize" type="number" placeholder="Account Size ($)">
+                <input id="riskTolerance" type="number" placeholder="Risk Tolerance (%)">
+                <input id="riskTicksl" type="number" placeholder="Stop Loss (in ticks)">
+                <input type="button" id="calculateRisk" value="Calculate Contracts">
+            </div>
+        </div>
+
+        <div id="results">
+            <div id="result">
+                <div id="resultProfit"></div>
+                <div id="resultLoss"></div>
+            </div>
+
+            <div id="riskResult">
+                <div id="resultContracts"></div>
+            </div>
+        </div>
     </div>
 
-    <div id="calculators">
-        <div id="input">
-            <h2>Profit &amp; Loss Calculator</h2>
-            <input id="ticksl" type="number" placeholder="Your SL (in ticks)">
-            <input id="ticktp" type="number" placeholder="Your TP (in ticks)">
-            <input id="contract" type="number" placeholder="Your Contract Size">
-            <input type="button" id="submit" value="Calculate Profit &amp; Loss">
-        </div>
-
-        <div id="riskCalculator">
-            <h2>Risk Calculator</h2>
-            <input id="accountSize" type="number" placeholder="Account Size ($)">
-            <input id="riskTolerance" type="number" placeholder="Risk Tolerance (%)">
-            <input id="riskTicksl" type="number" placeholder="Stop Loss (in ticks)">
-            <input type="button" id="calculateRisk" value="Calculate Contracts">
-        </div>
-    </div>
-
-    <div id="results">
-        <div id="result">
-            <div id="resultProfit"></div>
-            <div id="resultLoss"></div>
-        </div>
-
-        <div id="riskResult">
-            <div id="resultContracts"></div>
-        </div>
-    </div>
-
-    <!-- TradingView Widget -->
-    <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-                <span class="blue-text">Track all markets on TradingView</span>
-            </a>
-        </div>
+    <!-- Economic Calendar -->
+    <div id="economic-calendar-30970">
+        <script type="text/javascript" src="https://www.cashbackforex.com/Content/remote/remote-calendar-widget.js"></script>
+        <script type="text/javascript">
+            RemoteCalendar({
+                "Lang": "en",
+                "DefaultTime": "today",
+                "DefaultTheme": "dark",
+                "Url": "https://www.cashbackforex.com",
+                "SubPath": "economic-calendar",
+                "IsShowEmbedButton": true,
+                "DefaultCountries": "us",
+                "DefaultImpacts": "HIGH,MEDIUM",
+                "ContainerId": "economic-calendar-30970"
+            });
+        </script>
     </div>
 </div>
 
 <script src="script.js"></script>
-
-<!-- Proper TradingView Widget Embed -->
-<script type="text/javascript">
-    new TradingView.widget({
-        "container_id": "tradingview-widget-container__widget",
-        "width": 400,
-        "height": 550,
-        "colorTheme": "dark",
-        "isTransparent": false,
-        "locale": "en",
-        "importanceFilter": "-1,0,1",
-        "countryFilter": "us"
-    });
-</script>
-
 </body>
 </html>

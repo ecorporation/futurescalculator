@@ -119,24 +119,29 @@ button:hover, input[type="button"]:hover {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
-.tradingview-widget-container {
+#economic-calendar-30970 {
+    flex: 1;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: auto; /* Allows for flexibility in size */
+}
+.outer-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 10px;
-    min-width: 300px;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px;
 }
 
-.tradingview-widget-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+.main-content {
+    flex: 3;
+}
+
+#economic-calendar-30970 {
+    flex: 1;
 }
 
 html {
