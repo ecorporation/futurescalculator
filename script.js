@@ -22,8 +22,17 @@ document.getElementById("submit").addEventListener("click", () => {
 });
 
 function showResult() {
-    document.getElementById('result').style.display = 'flex';
+    const resultDiv = document.getElementById('result');
+    resultDiv.style.display = 'flex'; // Make it visible
+    resultDiv.style.flexDirection = 'column'; // Arrange children vertically
 }
+
+function showRiskResult() {
+    const riskResultDiv = document.getElementById('riskResult');
+    riskResultDiv.style.display = 'flex'; // Make it visible
+    riskResultDiv.style.flexDirection = 'column'; // Arrange children vertically
+}
+
 
 document.getElementById("calculateRisk").addEventListener("click", () => {
     const accountSize = parseFloat(document.getElementById("accountSize").value);
@@ -40,7 +49,3 @@ document.getElementById("calculateRisk").addEventListener("click", () => {
 
     showRiskResult();
 });
-
-function showRiskResult() {
-    document.getElementById('riskResult').style.display = 'flex';
-}
